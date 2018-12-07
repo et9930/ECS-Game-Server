@@ -1,0 +1,10 @@
+name: nakama1
+data_dir: "./"
+logger:
+  level: "debug"
+database:
+  address:
+    - "root@IT69424:26257"
+
+session:
+  token_expiry_sec: 1000
