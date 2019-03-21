@@ -4,7 +4,7 @@ logger:
   level: "debug"
 database:
   address:
-    - "root@IT69424:26257"
+    - "root@127.0.0.1:26257"
 
 session:
   token_expiry_sec: 1000
