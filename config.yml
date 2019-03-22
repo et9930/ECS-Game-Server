@@ -1,10 +1,20 @@
-name: nakama1
+name: NarutoServer
+
 data_dir: "./"
+
 logger:
   level: "debug"
+  
 database:
   address:
     - "root@127.0.0.1:26257"
-
+    
+runtime:
+  http_key: "NarutoKey"
+  
+socket:
+  server_key: "NarutoKey"
+    
 session:
+  encryption_key: "NarutoKey"
   token_expiry_sec: 1000
