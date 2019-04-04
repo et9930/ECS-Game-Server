@@ -15,19 +15,19 @@ local function AfterSignIn(context, payload)
     local created = payload.created
     if (created ~= nil and created == true) then
         local user_id = context.user_id
-        print(user_id)
-        storage.StorageWrite(user_id, "user_data", "username", context.username)
-        storage.StorageWrite(user_id, "user_data", "head_shot", "NamikazeMinato")
-        storage.StorageWrite(user_id, "user_data", "user_level", 1)
-        storage.StorageWrite(user_id, "user_data", "user_exp", 0)
-        storage.StorageWrite(user_id, "user_data", "battle_number", 0)
-        storage.StorageWrite(user_id, "user_data", "win_rate", 0)
-        storage.StorageWrite(user_id, "user_data", "ninja_number", 0)
-        storage.StorageWrite(user_id, "user_data", "level_s", 0)
-        storage.StorageWrite(user_id, "user_data", "level_a", 0)
-        storage.StorageWrite(user_id, "user_data", "level_b", 0)
-        storage.StorageWrite(user_id, "user_data", "level_c", 0)
-        storage.StorageWrite(user_id, "user_data", "level_d", 0)
+        print(user_id .. " init data")
+        storage.WriteStorage(user_id, "user_data", "username", context.username, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "head_shot", "NamikazeMinato", nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "user_level", 1, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "user_exp", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "battle_number", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "win_rate", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "ninja_number", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "level_s", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "level_a", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "level_b", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "level_c", 0, nil, 2, 1)
+        storage.WriteStorage(user_id, "user_data", "level_d", 0, nil, 2, 1)
     end
 end
 
