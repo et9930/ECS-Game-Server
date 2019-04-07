@@ -1,1 +1,0 @@
-nakama.exe --config config.yml

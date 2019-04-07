@@ -1,0 +1,1 @@
+./cockroach sql --insecure --execute="DROP DATABASE NAKAMA cascade"
