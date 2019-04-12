@@ -3,7 +3,7 @@
 -- Created Date: 2019-03-25, 17:40:22
 -- Author: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
--- Last Modified: 2019-04-04, 16:50:39
+-- Last Modified: 2019-04-10, 14:54:46
 -- Modified By: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
 -- 
@@ -11,7 +11,7 @@
 local nk = require("nakama")
 local M = {}
 
-function M.WriteStorage(user_id, collection, key, value, version, permission_read, permission_write)
+function M.Write(user_id, collection, key, value, version, permission_read, permission_write)
     local object_id = {
         {
             user_id = user_id, 
@@ -26,7 +26,7 @@ function M.WriteStorage(user_id, collection, key, value, version, permission_rea
     nk.storage_write(object_id)
 end
 
-function M.ReadStorage(user_id, collection, key)
+function M.Read(user_id, collection, key)
     local object_id = {
         {user_id = user_id, collection = collection, key = key}
     }
@@ -35,7 +35,7 @@ function M.ReadStorage(user_id, collection, key)
     return objects[1].value.value
 end
 
-function M.DeleteStorage(user_id, collection, key)
+function M.Delete(user_id, collection, key)
     local object_id = {
         {user_id = user_id, collection = collection, key = key}
     }
