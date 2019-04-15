@@ -1,0 +1,12 @@
+{
+    "ninjas": [
+        {
+            "ninja_id": 1001,
+            "ninja_name": "NamikazeMinato"
+        },
+        {
+            "ninja_id": 1002,
+            "ninja_name": "UchihaMadara"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
 -- Created Date: 2019-03-25, 17:40:22
 -- Author: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
--- Last Modified: 2019-04-10, 14:54:46
+-- Last Modified: 2019-04-14, 16:13:42
 -- Modified By: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
 -- 
@@ -32,6 +32,9 @@ function M.Read(user_id, collection, key)
     }
 
     local objects = nk.storage_read(object_id)
+    if objects[1] == nil then
+        return nil
+    end
     return objects[1].value.value
 end
 
