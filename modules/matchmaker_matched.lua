@@ -17,6 +17,10 @@ local function MatchmakerMatched(context, matchmaker_users)
         #matchmaker_users / 2,
         #matchmaker_users / 2
     }
+    local team_number = {
+        0,
+        0
+    }
     local match_type = 0
 
     -- match type
@@ -36,6 +40,7 @@ local function MatchmakerMatched(context, matchmaker_users)
         match_size = #matchmaker_users,
         match_player = {},
         match_ready_number = 0,
+        match_choose_finish_number = 0
     }
     
     for i = 1, #matchmaker_users do
@@ -50,15 +55,19 @@ local function MatchmakerMatched(context, matchmaker_users)
         end
         left_team_number[team] = left_team_number[team] - 1
 
-        local ready = false
+        team_number[team] = team_number[team] + 1        
 
+        local ready = false
+        
         match_player_info.user_id = user_id
         match_player_info.team = team
+        match_player_info.position = team_number[team] + (team - 1) * 4 - 1
 
         match_data.match_player[i] = match_player_info
 
         storage.Write(user_id, "match_data", "custom_match_id", custom_match_id, nil, 2, 1)
         storage.Write(user_id, "match_data", "ready", ready, nil, 2, 1)
+        storage.Write(user_id, "match_data", "team", team, nil, 2, 1)
     end
 
     storage.Write(nil, "server_match", custom_match_id, match_data, nil, 2, 1)
