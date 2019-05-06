@@ -40,7 +40,8 @@ local function MatchmakerMatched(context, matchmaker_users)
         match_size = #matchmaker_users,
         match_player = {},
         match_ready_number = 0,
-        match_choose_finish_number = 0
+        match_choose_finish_number = 0,
+        match_random_seed = math.random(10000)
     }
     
     for i = 1, #matchmaker_users do
