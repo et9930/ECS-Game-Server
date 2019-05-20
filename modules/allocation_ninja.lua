@@ -3,7 +3,7 @@
 -- Created Date: 2019-04-14, 16:33:21
 -- Author: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
--- Last Modified: 2019-04-15, 15:31:32
+-- Last Modified: 2019-05-18, 07:35:50
 -- Modified By: Wang Chao (wangchao.1230@bytedance.com)
 -- -----
 -- 
@@ -34,6 +34,7 @@ function M.AllocationNinja(match_data)
     -- random map
     local random_map_index = math.random(1, map_number)
     local map = map_config.maps[random_map_index]
+    match_data.match_map = map
 
     for index, player in ipairs(match_data.match_player) do
         local notification_user_id = player.user_id
@@ -58,6 +59,8 @@ function M.AllocationNinja(match_data)
 
         nk.notification_send(notification_user_id, "allocation_ninja", notification_context, 502, nil, false)
     end
+
+    storage.Write(nil, "server_match", match_data.custom_match_id, match_data, nil, 2, 1)
 end
 
 return M

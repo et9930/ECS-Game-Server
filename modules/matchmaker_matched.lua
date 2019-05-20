@@ -41,7 +41,9 @@ local function MatchmakerMatched(context, matchmaker_users)
         match_player = {},
         match_ready_number = 0,
         match_choose_finish_number = 0,
-        match_random_seed = math.random(10000)
+        match_random_seed = math.random(10000),
+        match_start_time = 0,
+        match_map = {}
     }
     
     for i = 1, #matchmaker_users do
